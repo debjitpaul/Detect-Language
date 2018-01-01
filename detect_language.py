@@ -56,7 +56,7 @@ def _calculate_languages_counts(text):
     count_russian=0
     count_arabic=0
 
-    with open("/home/debjit/Desktop/stopwords-all.json", 'r') as f:
+    with open("./stopwords-all.json", 'r') as f:
         stop_words = json.load(f)	
     for word in words:
         if word.decode('utf-8') in stop_words['en']:
@@ -115,6 +115,7 @@ def detect_language(text):
 
 #----------------------------------------------------------------------
 def main():
+
     parser = argparse.ArgumentParser()
     parser.add_argument("txtfile", help=".txt file containing the input text", nargs='?')
     args = parser.parse_args()
